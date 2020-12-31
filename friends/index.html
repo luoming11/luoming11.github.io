@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -91,17 +91,6 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -183,17 +172,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -516,7 +494,7 @@
                             <div class="card frind-card3">
                                 <div class="frind-ship">
                                     <div class="title">
-                                        <img src="https://bkimg.cdn.bcebos.com/pic/377adab44aed2e738bd41baec84bb68b87d6277f4c54?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg" alt="img">
+                                        <img src="https://i0.hdslb.com/bfs/archive/771bd6d35c782a31565675f6d04f00fa1c48d0b9.png" alt="img">
                                         <div>
                                             <h1 class="friend-name">bilibili</h1>
                                             <p style="position: relative;top: -35px;">国内知名的视频弹幕网站。</p>
@@ -584,11 +562,6 @@
             
             
             
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
             
             <br>
             
@@ -604,33 +577,36 @@
                     var startYear = "2020";
                     var startMonth = "12";
                     var startDate = "27";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
+                    // var startHour = "";
+                    // var startMinute = "";
+                    // var startSecond = "";
                     var todayYear = today.getFullYear();
                     var todayMonth = today.getMonth() + 1;
                     var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    // var todayHour = today.getHours();
+                    // var todayMinute = today.getMinutes();
+                    // var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate);
+                        // , startHour, startMinute, startSecond
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate);
+                        // , todayHour, todayMinute, todaySecond
                     var diff = t2 - t1;
                     var diffYears = Math.floor(diff / years);
                     var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
+                    // var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    // var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                    //     minutes);
+                    // var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                    //     diffMinutes * minutes) / seconds);
                     if (startYear == todayYear) {
                         document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 ";
+                        //  + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
                     } else {
                         document.getElementById("year").innerHTML = startYear + " - " + todayYear;
                         document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                            " 天 ";
+                        //  + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
                     }
                 }
                 setInterval(siteTime, 1000);
@@ -785,7 +761,7 @@ $(function () {
 </div>
 
     <!-- 樱花飘落特效 -->
-    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script> -->
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
@@ -823,11 +799,6 @@ $(function () {
 
     <!--腾讯兔小巢-->
     
-    
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
     
 
     
