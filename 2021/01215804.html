@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="剑来-第一章, LoM">
+    <meta name="keywords" content="ES6-Promise, LoM">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑来-第一章 | LoM</title>
+    <title>ES6-Promise | LoM</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">剑来-第一章</h1>
+                    <h1 class="description center-align post-title">ES6-Promise</h1>
                 </div>
             </div>
         </div>
@@ -322,12 +322,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ES6/">
+                                <span class="chip bg-color">ES6</span>
+                            </a>
+                        
+                            <a href="/tags/promise/">
+                                <span class="chip bg-color">promise</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ES6/" class="post-category">
+                                ES6
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -336,7 +353,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-28
+                    2021-01-21
                 </div>
                 
 
@@ -362,57 +379,115 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章-——-惊蛰"><a href="#第一章-——-惊蛰" class="headerlink" title="第一章 —— 惊蛰"></a>第一章 —— 惊蛰</h2><hr>
-<p>&emsp;&emsp;二月二，龙抬头。</p>
-<p>&emsp;&emsp;暮色里，小镇名叫泥瓶巷的僻静地方，有位孤苦伶仃的清瘦少年，此时他正按照习俗，一手持蜡烛，一手持桃枝，照耀房梁、墙壁、木床等处，用桃枝敲敲打打，试图借此驱赶蛇蝎、蜈蚣等，嘴里念念有词，是这座小镇祖祖辈辈传下来的老话：二月二，烛照梁，桃打墙，人间蛇虫无处藏。</p>
-<p>&emsp;&emsp;少年姓陈，名平安，爹娘早逝。小镇的瓷器极负盛名，本朝开国以来，就担当起“奉诏监烧献陵祭器”的重任，有朝廷官员常年驻扎此地，监理官窑事务。无依无靠的少年，很早就当起了烧瓷的窑匠，起先只能做些杂事粗活，跟着一个脾气糟糕的半路师傅，辛苦熬了几年，刚刚琢磨到一点烧瓷的门道，结果世事无常，小镇突然失去了官窑造办这张护身符，小镇周边数十座形若卧龙的窑炉，一夜之间全部被官府勒令关闭熄火。</p>
-<p>&emsp;&emsp;陈平安放下新折的那根桃枝，吹灭蜡烛，走出屋子后，坐在台阶上，仰头望去，星空璀璨。</p>
-<p>&emsp;&emsp;少年至今仍然清晰记得，那个只肯认自己做半个徒弟的老师傅，姓姚，在去年暮秋时分的清晨，被人发现坐在一张小竹椅子上，正对着窑头方向，闭眼了。</p>
-<p>&emsp;&emsp;不过如姚老头这般钻牛角尖的人，终究少数。</p>
-<p>&emsp;&emsp;世世代代都只会烧瓷一事的小镇匠人，既不敢僭越烧制贡品官窑，也不敢将库藏瓷器私自贩卖给百姓，只得纷纷另谋出路，十四岁的陈平安也被扫地出门，回到泥瓶巷后，继续守着这栋早已破败不堪的老宅，差不多是家徒四壁的惨淡场景，便是陈平安想要当败家子，也无从下手。</p>
-<p>&emsp;&emsp;当了一段时间飘来荡去的孤魂野鬼，少年实在找不到挣钱的营生，靠着那点微薄积蓄，少年勉强填饱肚子，前几天听说几条街外的骑龙巷，来了个姓阮的外乡老铁匠，对外宣称要收七八个打铁的学徒，不给工钱，但管饭，陈平安就赶紧跑去碰运气，不曾想老人只是斜瞥了他一眼，就把他拒之门外，当时陈平安就纳闷，难道打铁这门活计，不是看臂力大小，而是看面相好坏？</p>
-<p>&emsp;&emsp;要知道陈平安虽然看着孱弱，但力气不容小觑，这是少年那些年烧瓷拉坯锻炼出来的身体底子，除此之外，陈平安还跟着姓姚的老人，跑遍了小镇方圆百里的山山水水，尝遍了四周各种土壤的滋味，任劳任怨，什么脏活累活都愿意做，毫不拖泥带水。可惜老姚始终不喜欢陈平安，嫌弃少年没有悟性，是榆木疙瘩不开窍，远远不如大徒弟刘羡阳，这也怪不得老人偏心，师父领进门，修行在个人，例如同样是枯燥乏味的拉坯，刘羡阳短短半年的功力，就抵得上陈平安辛苦三年的水准。</p>
-<p>&emsp;&emsp;虽然这辈子都未必用得着这门手艺，但陈平安仍是像以往一般，闭上眼睛，想象自己身前搁置有青石板和轱辘车，开始练习拉坯，熟能生巧。</p>
-<p>&emsp;&emsp;大概每过一刻钟，少年就会歇息稍许时分，抖抖手腕，如此循环反复，直到整个人彻底精疲力尽，陈平安这才起身，一边在院中散步，一边缓缓舒展筋骨。从来没有人教过陈平安这些，是他自己瞎琢磨出来的门道。</p>
-<p>&emsp;&emsp;天地间原本万籁寂静，陈平安听到一声刺耳的讥讽笑声，停下脚步，果不其然，看到那个同龄人蹲在墙头上，咧着嘴，毫不掩饰他的鄙夷神色。</p>
-<p>&emsp;&emsp;此人是陈平安的老邻居，据说更是前任监造大人的私生子，那位大人唯恐清流非议、言官弹劾，最后孤身返回京城述职，把孩子交由颇有私交情谊的接任官员，帮着看管照拂。如今小镇莫名其妙地失去官窑烧制资格，负责替朝廷监理窑务的督造大人，自己都泥菩萨过江自身难保了，哪里还顾得上官场同僚的私生子，丢下一些银钱，就火急火燎赶往京城打点关系。</p>
-<p>&emsp;&emsp;不知不觉已经沦为弃子的邻居少年，日子倒是依旧过得优哉游哉，成天带着他的贴身丫鬟，在小镇内外逛荡，一年到头游手好闲，也从来不曾为银子发过愁。</p>
-<p>&emsp;&emsp;泥瓶巷家家户户的黄土院墙都很低矮，其实邻居少年完全不用踮起脚跟，就可以看到这边院子的景象，可每次跟陈平安说话，偏偏喜欢蹲在墙头上。</p>
-<p>&emsp;&emsp;相比陈平安这个名字的粗浅俗气，邻居少年就要雅致许多，叫宋集薪，就连与他相依为命的婢女，也有个文绉绉的称呼，稚圭。</p>
-<p>&emsp;&emsp;少女此时就站在院墙那边，她有一双杏眼，怯怯弱弱。</p>
-<p>&emsp;&emsp;院门那边，有个嗓音响起，“你这婢女卖不卖？”</p>
-<p>&emsp;&emsp;宋集薪愣了愣，循着声音转头望去，是个眉眼含笑的锦衣少年，站在院外，一张全然陌生的面孔。</p>
-<p>&emsp;&emsp;锦衣少年身边站着一位身材高大的老者，面容白皙，脸色和蔼，轻轻眯眼打量着两座毗邻院落的少年少女。</p>
-<p>&emsp;&emsp;老者的视线在陈平安一扫而过，并无停滞，但是在宋集薪和婢女身上，多有停留，笑意渐渐浓郁。</p>
-<p>&emsp;&emsp;宋集薪斜眼道：“卖！怎么不卖！”</p>
-<p>&emsp;&emsp;那少年微笑道：“那你说个价。”</p>
-<p>&emsp;&emsp;少女瞪大眼眸，满脸匪夷所思，像一头惊慌失措的年幼麋鹿。</p>
-<p>&emsp;&emsp;宋集薪翻了个白眼，伸出一根手指，晃了晃，“白银一万两！”</p>
-<p>&emsp;&emsp;锦衣少年脸色如常，点头道：“好。”</p>
-<p>&emsp;&emsp;宋集薪见那少年不像是开玩笑的样子，连忙改口道：“是黄金万两！”</p>
-<p>&emsp;&emsp;锦衣少年嘴角翘起，道：“逗你玩的。”</p>
-<p>&emsp;&emsp;宋集薪脸色阴沉。</p>
-<p>&emsp;&emsp;锦衣少年不再理睬宋集薪，偏移视线，望向陈平安，“今天多亏了你，我才能买到那条鲤鱼，买回去后，我越看越欢喜，想着一定要当面跟你道一声谢，于是就让吴爷爷带我连夜来找你。”</p>
-<p>&emsp;&emsp;他丢出一只沉甸甸的绣袋，抛给陈平安，笑脸灿烂道：“这是酬谢，你我就算两清了。”</p>
-<p>&emsp;&emsp;陈平安刚想要说话，锦衣少年已经转身离去。</p>
-<p>&emsp;&emsp;陈平安皱了皱眉头。</p>
-<p>&emsp;&emsp;白天自己无意间看到有个中年人，提着只鱼篓走在大街上，捕获了一尾巴掌长短的金黄鲤鱼，它在竹篓里蹦跳得厉害，陈平安只瞥了一眼，就觉得很喜庆，于是开口询问，能不能用十文钱买下它，中年人本来只是想着犒劳犒劳自己的五脏庙，眼见有利可图，就坐地起价，狮子大开口，非要三十文钱才肯卖。囊中羞涩的陈平安哪里有这么多闲钱，又实在舍不得那条金灿灿的鲤鱼，就眼馋跟着中年人，软磨硬泡，想着把价格砍到十五文，哪怕是二十文也行，就在中年人有松口迹象的时候，锦衣少年和高大老人正好路过，他们二话不说，用五十文钱买走了鲤鱼和鱼篓，陈平安只能眼睁睁看着他们扬长而去，无可奈何。</p>
-<p>&emsp;&emsp;死死盯住那对爷孙愈行愈远的背影，宋集薪收回恶狠狠的眼神后，跳下墙头，似乎记起什么，对陈平安说道：“你还记得正月里的那条四脚吗？”</p>
-<p>&emsp;&emsp;陈平安点了点头。</p>
-<p>&emsp;&emsp;怎么会不记得，简直就是记忆犹新。</p>
-<p>&emsp;&emsp;按照这座小镇传承数百年的风俗，如果有蛇类往自家屋子钻，是好兆头，主人绝对不要将其驱逐打杀。宋集薪在正月初一的时候，坐在门槛上晒太阳，然后就有只俗称四脚蛇的小玩意儿，在他的眼皮子底下往屋里窜，宋集薪一把抓住就往院子里摔出去，不曾想那条已经摔得七荤八素的四脚蛇，愈挫愈勇，一次次，把从来不信鬼神之说的宋集薪给气得不行，一怒之下就把它甩到了陈平安院子，哪里想到，宋集薪第二天就在自己床底下，看到了那条盘踞蜷缩起来的四脚蛇。</p>
-<p>&emsp;&emsp;宋集薪察觉到少女扯了扯自己袖子。</p>
-<p>&emsp;&emsp;少年与她心有灵犀，下意识就将已经到了嘴边的话语，重新咽回肚子。</p>
-<p>&emsp;&emsp;他想说的是，那条奇丑无比的四脚蛇，最近额头上有隆起，如头顶生角。</p>
-<p>&emsp;&emsp;宋集薪换了一句话说出口，“我和稚圭可能下个月就要离开这里了。”</p>
-<p>&emsp;&emsp;陈平安叹了口气，“路上小心。”</p>
-<p>&emsp;&emsp;宋集薪半真半假道：“有些物件我肯定搬不走，你可别趁我家没人，就肆无忌惮地偷东西。”</p>
-<p>&emsp;&emsp;陈平安摇了摇头。</p>
-<p>&emsp;&emsp;宋集薪蓦然哈哈大笑，用手指点了点陈平安，嬉皮笑脸道：“胆小如鼠，难怪寒门无贵子，莫说是这辈子贫贱任人欺，说不定下辈子也逃不掉。”</p>
-<p>&emsp;&emsp;陈平安默不作声。</p>
-<p>&emsp;&emsp;各自返回屋子，陈平安关上门，躺在坚硬的木板床上，贫寒少年闭上眼睛，小声呢喃道：“碎碎平，岁岁安，碎碎平安，岁岁平安……”</p>
-<hr>
-<p><strong>第一章 完。</strong></p>
+                <h2 id="什么是Promise？"><a href="#什么是Promise？" class="headerlink" title="什么是Promise？"></a>什么是Promise？</h2><blockquote>
+<p>Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。它最早由社区提出并实现,ES6将其写进了语言标准，统一了用法，并原生提供了Promise对象。</p>
+</blockquote>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>1、对象的状态不受外界影响（3种状态）</p>
+<ul>
+<li>Pending状态（进行中）</li>
+<li>Fulfilled状态（已成功）</li>
+<li>Rejected状态（已失败）</li>
+</ul>
+<p>2、一旦状态改变就不会再变（两种状态改变：成功或失败）</p>
+<ul>
+<li>Pending -&gt; Fulfilled</li>
+<li>Pending -&gt; Rejected</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="创建Promise实例"><a href="#创建Promise实例" class="headerlink" title="创建Promise实例"></a>创建Promise实例</h3><pre class=" language-js"><code class="language-js"> <span class="token keyword">var</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// ... some code</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* 异步操作成功 */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
+<p>&emsp; Promise构造函数接受一个函数作为参数，该函数的两个参数分别是<code>resolve</code>和<code>reject</code>。它们是两个函数，由JavaScript引擎提供，不用自己部署。</p>
+<p>&emsp; resolve作用是将Promise对象状态由“未完成”变为“成功”，也就是<code>Pending</code> -&gt; <code>Fulfilled</code>，在异步操作成功时调用，并将异步操作的结果作为参数传递出去；而reject函数则是将Promise对象状态由“未完成”变为“失败”，也就是<code>Pending -&gt; Rejected</code>，在异步操作失败时调用，并将异步操作的结果作为参数传递出去。</p>
+<h3 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h3><p>&emsp; Promise实例生成后，可用<code>then</code>方法分别指定两种状态回调参数。<code>then</code>方法可以接受两个回调函数作为参数：</p>
+<ol>
+<li>Promise对象状态改为Resolved时调用（必选）</li>
+<li>Promise对象状态改为Rejected时调用（可选）</li>
+</ol>
+<h3 id="基本用法示例"><a href="#基本用法示例" class="headerlink" title="基本用法示例"></a>基本用法示例</h3><pre class=" language-js"><code class="language-js">
+<span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span>ms<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"finished"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&emsp;这段代码定义了一个函数sleep，调用后，等待了指定参数(500)毫秒后执行then中的函数。值得注意的是，Promise新建后就会立即执行。</p>
+<h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>&emsp;接下来我们探究一下它的执行顺序。</p>
+<pre class=" language-js"><code class="language-js">
+<span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ccc"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// aaa</span>
+<span class="token comment" spellcheck="true">// ccc</span>
+<span class="token comment" spellcheck="true">// bbb</span>
+</code></pre>
+<p>&emsp;执行后，我们发现输出顺序总是 <code>aaa -&gt; ccc -&gt; bbb</code>。表明，在Promise新建后会立即执行，所以<strong>首先输出</strong> <code>aaa</code>。然后，then方法指定的回调函数将在当前脚本所有同步任务执行完后才会执行，所以<code>bbb</code> <strong>最后输出</strong>。</p>
+<h3 id="与定时器混用"><a href="#与定时器混用" class="headerlink" title="与定时器混用"></a>与定时器混用</h3><p>&emsp; 首先看一个实例：</p>
+<pre class=" language-js"><code class="language-js">
+<span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 1</span>
+<span class="token comment" spellcheck="true">// 4</span>
+<span class="token comment" spellcheck="true">// 3</span>
+<span class="token comment" spellcheck="true">// 2</span>
+</code></pre>
+<p>&emsp; 可以看到，结果输入顺序是：<code>1 -&gt; 4 -&gt; 3 -&gt; 2</code>。 1与4的顺序不必再说，而2与3先输出Promise的then，然后输出定时器的结果。原因则是Promise属于JavaScript引擎内部任务，而setTimeout则是浏览器API，而引擎内部任务优先级高于浏览器API任务，所以有此结果。</p>
+<h2 id="拓展async-await"><a href="#拓展async-await" class="headerlink" title="拓展async/await"></a>拓展async/await</h2><h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>&emsp; 异步。async函数对 Generator 函数的改进，async 函数必定返回 Promise，我们把所有返回 Promise 的函数都可以认为是异步函数。特点体现在以下四点：</p>
+<ul>
+<li>内置执行器</li>
+<li>更好的语义</li>
+<li>更广的适用性</li>
+<li>返回值是 Promise</li>
+</ul>
+<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>&emsp; 顾名思义，等待。正常情况下，await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值。另一种情况是，await命令后面是一个thenable对象（即定义then方法的对象），那么await会将其等同于 Promise 对象。</p>
+<h3 id="混合使用"><a href="#混合使用" class="headerlink" title="混合使用"></a>混合使用</h3><p>&emsp;先看示例：</p>
+<pre class=" language-js"><code class="language-js">
+<span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span>ms<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"AAA"</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"BBB"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// AAA</span>
+<span class="token comment" spellcheck="true">// BBB (5000ms后)</span>
+</code></pre>
+<p>&emsp;我们定义函数<code>sleep</code>，返回一个<code>Promise</code>。然后在<code>handle</code>函数前加上<code>async</code>关键词，这样就定义了一个<code>async</code>函数。在该函数中，利用<code>await</code>来等待一个<code>Promise</code>。</p>
+<h2 id="Promise的优缺点"><a href="#Promise的优缺点" class="headerlink" title="Promise的优缺点"></a>Promise的优缺点</h2><p><strong>优点</strong></p>
+<ul>
+<li>解决回调</li>
+<li>链式调用</li>
+<li>减少嵌套</li>
+<li>代码优雅</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>无法监测进行状态</li>
+<li>新建立即执行且无法取消</li>
+<li>内部错误无法抛出</li>
+</ul>
 
                 
             </div>
@@ -426,7 +501,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
+                                </a>
+                            
+                                <a href="/tags/promise/">
+                                    <span class="chip bg-color">promise</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -471,9 +554,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/01215804.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ES6-Promise">
+                        
+                        <span class="card-title">ES6-Promise</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Promise 是异步编程的一种解决方案。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
+                    </a>
+                    
+                    <a href="/tags/promise/">
+                        <span class="chip bg-color">promise</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/123043699.html">
                     <div class="card-image">
@@ -491,9 +629,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -517,43 +655,6 @@
                         <span class="chip bg-color">hexo</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/122716107.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-27
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Luo Ming
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
@@ -691,7 +792,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020</span>
+                <span id="year">2020-2021</span>
             
             <span id="year">2020</span>
             <a href="/about" target="_blank">Luo Ming</a>
