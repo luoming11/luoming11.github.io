@@ -549,6 +549,62 @@ axios<span class="token punctuation">.</span>defaults<span class="token punctuat
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
+<h2 id="十、拦截器"><a href="#十、拦截器" class="headerlink" title="十、拦截器"></a>十、拦截器</h2><p><strong>axios提供了拦截器，用于我们在发送每次请求或者得到响应后，进行对应的处理</strong></p>
+<blockquote>
+<p><strong>拦截器的应用场景:</strong></p>
+<ul>
+<li>比如config中的一些信息不符合服务器的要求。</li>
+<li>比如每次发送网络请求时，都希望在界面中显示一个请求的图标。</li>
+<li>某些网络请求（比如登录（token）），必须携带一些特殊的信息。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ol>
+<li>如何使用拦截器呢？</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+<span class="token comment" spellcheck="true">// 配置请求成功和失败拦截</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>config <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'来到了request拦截success中'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> config  <span class="token comment" spellcheck="true">// 拦截后要把结果返回，不然请求会拿不到结果</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> err <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'来到了request拦截failure中'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> err
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 响应成功和失败拦截</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'来到了response拦截success中'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> response<span class="token punctuation">.</span>data
+<span class="token punctuation">}</span><span class="token punctuation">,</span> err <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'来到了response拦截failure中'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> err
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre>
+<blockquote>
+<ol start="2">
+<li>取消拦截器</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+<span class="token keyword">var</span> myInterceptor <span class="token operator">=</span> axios<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 拦截操作处理。。。</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">eject</span><span class="token punctuation">(</span>myInterceptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>给自定义的axios实例添加拦截器</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+<span class="token keyword">var</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建axios实例</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>axios真的是一个非常好用的网络请求库。它在各大框架中也是大显身手，目前在GitHub中的Star也已达到81k+，得到非常多的开发人员的青睐。</p>
+</blockquote>
 
                 
             </div>
