@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ES6-Promise, LoM">
+    <meta name="keywords" content="axios, LoM">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ES6-Promise | LoM</title>
+    <title>axios | LoM</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ES6-Promise</h1>
+                    <h1 class="description center-align post-title">axios</h1>
                 </div>
             </div>
         </div>
@@ -324,12 +324,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ES6/">
-                                <span class="chip bg-color">ES6</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">
+                                <span class="chip bg-color">网络请求</span>
                             </a>
                         
-                            <a href="/tags/promise/">
-                                <span class="chip bg-color">promise</span>
+                            <a href="/tags/axios/">
+                                <span class="chip bg-color">axios</span>
                             </a>
                         
                     </div>
@@ -340,8 +340,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ES6/" class="post-category">
-                                ES6
+                            <a href="/categories/axios/" class="post-category">
+                                axios
                             </a>
                         
                     </div>
@@ -353,7 +353,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-21
+                    2021-01-23
                 </div>
                 
 
@@ -379,115 +379,176 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是Promise？"><a href="#什么是Promise？" class="headerlink" title="什么是Promise？"></a>什么是Promise？</h2><blockquote>
-<p>Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。它最早由社区提出并实现,ES6将其写进了语言标准，统一了用法，并原生提供了Promise对象。</p>
+                <h2 id="一、-axios是什么？"><a href="#一、-axios是什么？" class="headerlink" title="一、 axios是什么？"></a>一、 axios是什么？</h2><p>对此，官方文档是这样说明的：</p>
+<blockquote>
+<p> Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。</p>
 </blockquote>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>1、对象的状态不受外界影响（3种状态）</p>
-<ul>
-<li>Pending状态（进行中）</li>
-<li>Fulfilled状态（已成功）</li>
-<li>Rejected状态（已失败）</li>
-</ul>
-<p>2、一旦状态改变就不会再变（两种状态改变：成功或失败）</p>
-<ul>
-<li>Pending -&gt; Fulfilled</li>
-<li>Pending -&gt; Rejected</li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="创建Promise实例"><a href="#创建Promise实例" class="headerlink" title="创建Promise实例"></a>创建Promise实例</h3><pre class=" language-js"><code class="language-js"> <span class="token keyword">var</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// ... some code</span>
-
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* 异步操作成功 */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre>
-<p>&emsp; Promise构造函数接受一个函数作为参数，该函数的两个参数分别是<code>resolve</code>和<code>reject</code>。它们是两个函数，由JavaScript引擎提供，不用自己部署。</p>
-<p>&emsp; resolve作用是将Promise对象状态由“未完成”变为“成功”，也就是<code>Pending</code> -&gt; <code>Fulfilled</code>，在异步操作成功时调用，并将异步操作的结果作为参数传递出去；而reject函数则是将Promise对象状态由“未完成”变为“失败”，也就是<code>Pending -&gt; Rejected</code>，在异步操作失败时调用，并将异步操作的结果作为参数传递出去。</p>
-<h3 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h3><p>&emsp; Promise实例生成后，可用<code>then</code>方法分别指定两种状态回调参数。<code>then</code>方法可以接受两个回调函数作为参数：</p>
-<ol>
-<li>Promise对象状态改为Resolved时调用（必选）</li>
-<li>Promise对象状态改为Rejected时调用（可选）</li>
+<h2 id="二、-axios特性"><a href="#二、-axios特性" class="headerlink" title="二、 axios特性"></a>二、 axios特性</h2><ol>
+<li>可以在浏览器中发送XMLHttpRequests</li>
+<li>可以再node.js中发送http请求</li>
+<li>支持Promise API</li>
+<li>拦截请求和响应</li>
+<li>转换请求数据和响应数据</li>
+<li>能够取消请求</li>
+<li>自动转换JSON数据</li>
+<li>客户端支持防御XSRF攻击</li>
 </ol>
-<h3 id="基本用法示例"><a href="#基本用法示例" class="headerlink" title="基本用法示例"></a>基本用法示例</h3><pre class=" language-js"><code class="language-js">
-<span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span>ms<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="三、使用场景"><a href="#三、使用场景" class="headerlink" title="三、使用场景"></a>三、使用场景</h2><p>在浏览器或Node.js环境中发送网络请求都可以使用axios库。</p>
+<h2 id="四、如何使用"><a href="#四、如何使用" class="headerlink" title="四、如何使用"></a>四、如何使用</h2><p><strong>安装模块</strong><br><code>npm install axios</code></p>
+<p><strong>直接引入</strong><br><code>&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<h2 id="五、示例"><a href="#五、示例" class="headerlink" title="五、示例"></a>五、示例</h2><blockquote>
+<ol>
+<li>发送一个GET请求</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+<span class="token comment" spellcheck="true">//不写方法默认使用get，一般还是指定方法比较好。</span>
+<span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'https://www.xxx.com'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//数据处理...</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"finished"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>&emsp;这段代码定义了一个函数sleep，调用后，等待了指定参数(500)毫秒后执行then中的函数。值得注意的是，Promise新建后就会立即执行。</p>
-<h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>&emsp;接下来我们探究一下它的执行顺序。</p>
-<pre class=" language-js"><code class="language-js">
-<span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ccc"</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// aaa</span>
-<span class="token comment" spellcheck="true">// ccc</span>
-<span class="token comment" spellcheck="true">// bbb</span>
-</code></pre>
-<p>&emsp;执行后，我们发现输出顺序总是 <code>aaa -&gt; ccc -&gt; bbb</code>。表明，在Promise新建后会立即执行，所以<strong>首先输出</strong> <code>aaa</code>。然后，then方法指定的回调函数将在当前脚本所有同步任务执行完后才会执行，所以<code>bbb</code> <strong>最后输出</strong>。</p>
-<h3 id="与定时器混用"><a href="#与定时器混用" class="headerlink" title="与定时器混用"></a>与定时器混用</h3><p>&emsp; 首先看一个实例：</p>
-<pre class=" language-js"><code class="language-js">
-<span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 1</span>
-<span class="token comment" spellcheck="true">// 4</span>
-<span class="token comment" spellcheck="true">// 3</span>
-<span class="token comment" spellcheck="true">// 2</span>
-</code></pre>
-<p>&emsp; 可以看到，结果输入顺序是：<code>1 -&gt; 4 -&gt; 3 -&gt; 2</code>。 1与4的顺序不必再说，而2与3先输出Promise的then，然后输出定时器的结果。原因则是Promise属于JavaScript引擎内部任务，而setTimeout则是浏览器API，而引擎内部任务优先级高于浏览器API任务，所以有此结果。</p>
-<h2 id="拓展async-await"><a href="#拓展async-await" class="headerlink" title="拓展async/await"></a>拓展async/await</h2><h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>&emsp; 异步。async函数对 Generator 函数的改进，async 函数必定返回 Promise，我们把所有返回 Promise 的函数都可以认为是异步函数。特点体现在以下四点：</p>
-<ul>
-<li>内置执行器</li>
-<li>更好的语义</li>
-<li>更广的适用性</li>
-<li>返回值是 Promise</li>
-</ul>
-<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>&emsp; 顾名思义，等待。正常情况下，await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值。另一种情况是，await命令后面是一个thenable对象（即定义then方法的对象），那么await会将其等同于 Promise 对象。</p>
-<h3 id="混合使用"><a href="#混合使用" class="headerlink" title="混合使用"></a>混合使用</h3><p>&emsp;先看示例：</p>
-<pre class=" language-js"><code class="language-js">
-<span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span>ms<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//失败反馈信息...</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"AAA"</span><span class="token punctuation">)</span>
-    <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"BBB"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
 
-<span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//指定get方法</span>
+axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/user?id=123'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//发送请求成功后执行此语句</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//失败执行此语句</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true">// AAA</span>
-<span class="token comment" spellcheck="true">// BBB (5000ms后)</span>
+<span class="token comment" spellcheck="true">//以上请求也可以通过这种方式发送</span>
+axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    params<span class="token punctuation">:</span><span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> <span class="token number">123</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>&emsp;我们定义函数<code>sleep</code>，返回一个<code>Promise</code>。然后在<code>handle</code>函数前加上<code>async</code>关键词，这样就定义了一个<code>async</code>函数。在该函数中，利用<code>await</code>来等待一个<code>Promise</code>。</p>
-<h2 id="Promise的优缺点"><a href="#Promise的优缺点" class="headerlink" title="Promise的优缺点"></a>Promise的优缺点</h2><p><strong>优点</strong></p>
-<ul>
-<li>解决回调</li>
-<li>链式调用</li>
-<li>减少嵌套</li>
-<li>代码优雅</li>
+<blockquote>
+<ol start="2">
+<li>发送一个post请求</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//post方法</span>
+axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    firstName<span class="token punctuation">:</span> <span class="token string">'San'</span><span class="token punctuation">,</span>
+    lastName<span class="token punctuation">:</span> <span class="token string">'Zhang'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>一次性发送并发请求——<em>all方法</em></li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//第一个请求方法</span>
+<span class="token keyword">function</span> <span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/user/name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//第二个请求方法</span>
+<span class="token keyword">function</span> <span class="token function">getUserAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/user/age'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+axios<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getUserAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>axios<span class="token punctuation">.</span><span class="token function">spread</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>result1<span class="token punctuation">,</span>result2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//当两个请求都完成时会触发这个函数，两个参数分别代表返回的结果。</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="六、传递配置发送请求"><a href="#六、传递配置发送请求" class="headerlink" title="六、传递配置发送请求"></a>六、传递配置发送请求</h2><p>除了以上的方式外，也可以通过向axios传递相关配置来创建请求。</p>
+<pre class=" language-js"><code class="language-js">
+<span class="token comment" spellcheck="true">// 发送一个post请求</span>
+<span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    method<span class="token punctuation">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    url<span class="token punctuation">:</span> <span class="token string">'/user/123'</span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        firstName<span class="token punctuation">:</span> <span class="token string">'San'</span><span class="token punctuation">,</span>
+        lastName<span class="token punctuation">:</span> <span class="token string">'Zhang'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="七、常见的配置选项"><a href="#七、常见的配置选项" class="headerlink" title="七、常见的配置选项"></a>七、常见的配置选项</h2><ul>
+<li>请求地址<br>&emsp; <code>url: &#39;/user&#39;</code></li>
+<li>请求类型<br>&emsp; <code>method: &#39;get&#39;</code></li>
+<li>请求根路径<br>&emsp; <code>baseURL: &#39;http://www.xxx.com/api&#39;</code></li>
+<li>请求前的数据处理<br>&emsp; <code>transformRequest: [function(data)&#123;&#125;]</code></li>
+<li>请求后的数据处理<br>&emsp; <code>transformResponse: [function(data)&#123;&#125;]</code></li>
+<li>自定义的请求头<br>&emsp; <code>headers: &#123;&#39;x-Requested-With&#39;:&#39;XMLHttpRequest&#39;&#125;</code></li>
+<li>URL查询对象<br>&emsp; <code>params: &#123;id: 123&#125;</code></li>
+<li>查询对象序列化函数<br>&emsp; <code>paramsSerializer: function(params)&#123;&#125;</code></li>
+<li>request body<br>&emsp; <code>data: &#123;key:&#39;aaa&#39;&#125;</code></li>
+<li>超时设置s<br>&emsp; <code>timeout: 1000</code></li>
+<li>跨域是否带Token<br>&emsp; <code>withCredentials: false</code></li>
+<li>自定义请求处理<br>&emsp; <code>adapter: function(resolve, reject, config)&#123;&#125;</code></li>
+<li>身份验证信息<br>&emsp; <code>auth:&#123;uname: &#39;admin&#39;, pwd:&#39;123456&#39;&#125;</code></li>
+<li>响应的数据格式 json/blob/documentarraybuffer/text/stream<br>&emsp; <code>responseType: &#39;json&#39;</code></li>
 </ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>无法监测进行状态</li>
-<li>新建立即执行且无法取消</li>
-<li>内部错误无法抛出</li>
+<h2 id="八、默认配置"><a href="#八、默认配置" class="headerlink" title="八、默认配置"></a>八、默认配置</h2><p><strong>可以设置默认配置，配置对所有请求都有效</strong></p>
+<blockquote>
+<ol>
+<li>全局默认配置。</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'http://xxx.com'</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>timeout <span class="token operator">=</span> <span class="token number">2000</span>
+</code></pre>
+<blockquote>
+<ol start="2">
+<li>自定义的实例默认配置（如何创建一个自定义实例的方法在下面会说明）。</li>
+</ol>
+</blockquote>
+<pre class=" language-js"><code class="language-js">
+<span class="token comment" spellcheck="true">//当创建实例的时候配置默认配置</span>
+<span class="token keyword">var</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    baseURL<span class="token punctuation">:</span> <span class="token string">'https://api.example.com'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="九、创建axios的实例"><a href="#九、创建axios的实例" class="headerlink" title="九、创建axios的实例"></a>九、创建axios的实例</h2><h3 id="为什么要创建axios的实例呢？"><a href="#为什么要创建axios的实例呢？" class="headerlink" title="为什么要创建axios的实例呢？"></a>为什么要创建axios的实例呢？</h3><ul>
+<li>当我们从axios模块中导入对象时，使用的实例是默认的实例。</li>
+<li>当给该实例设置一些默认配置时，这些配置就被固定下来了。</li>
+<li>但是后续开发中，某些配置可能会不太一样。</li>
+<li>比如某些请求需要使用特定的baseURL或者timeout或者content-Type等。</li>
+<li>这个时候，我们就可以创建新的实例，并且传入属于该实例的配置信息。</li>
 </ul>
+<h3 id="创建axios实例示例"><a href="#创建axios实例示例" class="headerlink" title="创建axios实例示例"></a>创建axios实例示例</h3><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 创建了一个axios实例</span>
+<span class="token keyword">let</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  baseURL<span class="token punctuation">:</span> <span class="token string">"https://xxx.com/api/"</span><span class="token punctuation">,</span>
+  timeout<span class="token punctuation">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//第一个请求</span>
+<span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token string">'/home/multidata'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 第二个请求</span>
+<span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token string">'/home/data'</span><span class="token punctuation">,</span>
+    params<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'pop'</span><span class="token punctuation">,</span>
+        page<span class="token punctuation">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
 
                 
             </div>
@@ -502,12 +563,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ES6/">
-                                    <span class="chip bg-color">ES6</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">
+                                    <span class="chip bg-color">网络请求</span>
                                 </a>
                             
-                                <a href="/tags/promise/">
-                                    <span class="chip bg-color">promise</span>
+                                <a href="/tags/axios/">
+                                    <span class="chip bg-color">axios</span>
                                 </a>
                             
                         </div>
@@ -554,9 +615,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/012324857.html">
                     <div class="card-image">
@@ -574,9 +636,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -589,6 +651,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -611,31 +674,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/123043699.html">
+                <a href="/2021/01215804.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="基于Hexo的hexo-theme-matery主题搭建博客并优化">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ES6-Promise">
                         
-                        <span class="card-title">基于Hexo的hexo-theme-matery主题搭建博客并优化</span>
+                        <span class="card-title">ES6-Promise</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用Hexo搭建自己喜欢的博客吧~
+                            Promise 是异步编程的一种解决方案。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    博客框架
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                             
@@ -645,12 +708,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
                     </a>
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/promise/">
+                        <span class="chip bg-color">promise</span>
                     </a>
                     
                 </div>
