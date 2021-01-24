@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vue-cli配置文件路径别名方法</title>
+      <link href="2021/012463398.html"/>
+      <url>2021/012463398.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>由于平时我们引入文件或图片路径的方式，如果层级嵌套太多的话，就会出现像这样的情况：</em></p><p>  <img src="https://s3.ax1x.com/2021/01/24/sHjkjI.png"></p><p>这样写出来的文件路径<strong>既不美观还容易出错，最重要的难以维护。</strong> 所以，我们在vue开发中可以给文件路径配置别名(<code>alias</code>)，就可以避免上面这样的代码出现。</p><h2 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h2><p>在项目的根目录下创建一个<code>vue.config.js</code>文件。如图：</p><p><img src="https://s3.ax1x.com/2021/01/24/sHjba8.png" alt="项目根目录"></p><h2 id="配置文件内容"><a href="#配置文件内容" class="headerlink" title="配置文件内容"></a>配置文件内容</h2><p>创建好配置文件，然后输入以下代码：</p><pre class=" language-js"><code class="language-js">  <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//引入path模块</span>  <span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">{</span>      <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span>dir<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//path.join(__dirname)设置绝对路径</span>  <span class="token punctuation">}</span>  module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span>      chainWebpack<span class="token punctuation">:</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>          config<span class="token punctuation">.</span>resolve<span class="token punctuation">.</span>alias          <span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">'@'</span><span class="token punctuation">,</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//set第一个参数：设置的别名，第二个参数：设置的路径</span>          <span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">'assets'</span><span class="token punctuation">,</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src/assets'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">'components'</span><span class="token punctuation">,</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src/components'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">'views'</span><span class="token punctuation">,</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src/views'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">'network'</span><span class="token punctuation">,</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src/network'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span></code></pre><p><strong><em>注意：</em></strong> <em>这是vue-cli4的配置方法。</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue-cli </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> vue-cli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>axios</title>
       <link href="2021/012324857.html"/>
       <url>2021/012324857.html</url>
